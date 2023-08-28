@@ -32,22 +32,23 @@ void imprimirLista(NodoPtr);
 int main(int argc, char const *argv[])
 {
     // crear 5 instancias de estructuras Alumno
-    AlumnoPtr *alumnos = (AlumnoPtr *)malloc(sizeof(AlumnoPtr) * 5);
+    AlumnoPtr alumnos[5];
 
-    alumnos[0] = crearAlumno("1", 1, 1);
-    alumnos[1] = crearAlumno("2", 2, 2);
-    alumnos[2] = crearAlumno("3", 3, 3);
-    alumnos[3] = crearAlumno("4", 4, 4);
-    alumnos[4] = crearAlumno("5", 5, 5);
+    alumnos[0] = crearAlumno("Walter White", 100, 1);
+    alumnos[1] = crearAlumno("Raul Magana", 200, 2);
+    alumnos[2] = crearAlumno("David Torres", 300, 3);
+    alumnos[3] = crearAlumno("Guadalupe Rios", 400, 4);
+    alumnos[4] = crearAlumno("Ml chispa", 500, 5);
     // crear la lista con las 5 instancias de Alumno
     NodoPtr cabeza = NULL;
 
     // insertar de forma ordenada de acuerdo al número de créditos (descendente)
 
-    for (int i = 0; i < 5; i++)
-    {
-        insertarNodoOrdenadoCreditos(&cabeza, alumnos[i]);
-    }
+    insertarNodoOrdenadoCreditos(&cabeza, alumnos[0]);
+    insertarNodoOrdenadoCreditos(&cabeza, alumnos[1]);
+    insertarNodoOrdenadoCreditos(&cabeza, alumnos[2]);
+    insertarNodoOrdenadoCreditos(&cabeza, alumnos[3]);
+    insertarNodoOrdenadoCreditos(&cabeza, alumnos[4]);
 
     // imprimir la lista
     printf("\nImpresion de la lista descendente: \n");
